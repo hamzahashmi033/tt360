@@ -1,0 +1,11 @@
+@import "./fonts.css";
+
+body{
+  background:#EEECE8;
+  font-family:"SF Pro", sans-serif;
+}
+
+.container-page{
+  max-width:1400px;
+  margin:auto;
+}
