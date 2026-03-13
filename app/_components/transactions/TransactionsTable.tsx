@@ -1,67 +1,85 @@
+import { Search } from "lucide-react"
 import Pagination from "../ui/Pagination"
 
 
 const data = [
- {
-   agent:"Acme",
-   invoice:"031606954233",
-   status:"Transmitted to Payee",
-   name:"John Smith",
-   phone:"832-345-2351",
-   city:"New York",
-   state:"New York",
-   zip:"10012"
- }
+  {
+    money: '-',
+    agent: "Acme",
+    invoice: "031606954233",
+    status: "Transmitted to Payee",
+    internal: '-',
+    name: "John Smith",
+    phone: "832-345-2351",
+    city: "New York",
+    state: "New York",
+    zip: "10012"
+  }
 ]
 
-export default function TransactionsTable(){
+export default function TransactionsTable() {
 
- return(
-   <div className="bg-white rounded-lg mt-6 overflow-hidden border">
+  return (
+    <div className="rounded-lg mt-6 overflow-hidden ">
 
-     <div className="p-4 flex justify-between">
-        <input
-        placeholder="Search"
-        className="border rounded-md px-3 py-2 w-60"
-        />
+      <div className="mb-4 flex justify-between ">
+        <div className="min-w-[560px] flex relative">
+          <input
+            placeholder="Search"
+            className="bg-white sf_pro_regular text-[#AAAAAA] border border-[#CCCCCC]  rounded-md px-3 py-2 w-60 w-full"
+          />
+          <div className="p-2 flex items-center justify-center bg-[#E1DED8] absolute right-2 top-[4px] rounded-full cursor-pointer">
+            <img src="/images/search.png" alt="" />
+          </div>
+        </div>
 
-        <span className="text-sm">50 Records</span>
-     </div>
 
-     <table className="w-full text-sm">
+        <span className="text-[18px] lufga_medium">50 Records</span>
+      </div>
+      <div className="w-full overflow-x-auto">
+        <table className="min-w-[1100px] w-full text-sm">
 
-      <thead className="bg-[#EEECE8] text-left">
-        <tr>
-          <th className="p-3">AGENT CODE</th>
-          <th>INVOICE NO</th>
-          <th>INVOICE STATUS</th>
-          <th>SENDER NAME</th>
-          <th>SENDER PHONE</th>
-          <th>CITY</th>
-          <th>STATE</th>
-          <th>ZIP</th>
-        </tr>
-      </thead>
+          <thead className="bg-[#E1DED8] text-left lufga_medium">
+            <tr>
+              <td className="p-3 rounded-tl-xl">MONEY TRANSMITTER CODE</td>
+              <td>AGENT CODE</td>
+              <td>INVOICE NO</td>
+              <td>INVOICE STATUS</td>
+              <td>SENDER INTERNAL CODE</td>
+              <td>SENDER FULL NAME</td>
+              <td>SENDER PHONE</td>
+              <td>SENDER CITY</td>
+              <td>SENDER STATE</td>
+              <td className="rounded-tr-xl">SENDER ZIP CODE</td>
+            </tr>
+          </thead>
 
-      <tbody>
-        {Array(7).fill(data[0]).map((row,i)=>(
-          <tr key={i} className="border-t">
-            <td className="p-3">{row.agent}</td>
-            <td>{row.invoice}</td>
-            <td>{row.status}</td>
-            <td>{row.name}</td>
-            <td>{row.phone}</td>
-            <td>{row.city}</td>
-            <td>{row.state}</td>
-            <td>{row.zip}</td>
-          </tr>
-        ))}
-      </tbody>
+          <tbody>
+            {Array(7).fill(data[0]).map((row, i) => (
+              <tr
+                key={i}
+                className={`border-t  border-b border-[#ECEAE6] sf_pro_regular [&:nth-child(2)]:bg-[#E1DED8] ${i === 3 || i === 5 ? "bg-[#FDFCF5]" : "bg-white"
+                  }`}
+              >
+                <td className="p-3">{row.money}</td>
+                <td>{row.agent}</td>
+                <td>{row.invoice}</td>
+                <td>{row.status}</td>
+                <td>{row.internal}</td>
+                <td>{row.name}</td>
+                <td>{row.phone}</td>
+                <td>{row.city}</td>
+                <td>{row.state}</td>
+                <td>{row.zip}</td>
+              </tr>
+            ))}
+          </tbody>
 
-     </table>
+        </table>
+      </div>
 
-     <Pagination/>
+      <Pagination />
 
-   </div>
- )
+    </div>
+  )
 }

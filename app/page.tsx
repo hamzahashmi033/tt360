@@ -5,6 +5,7 @@ import TransactionsTable from "./_components/transactions/TransactionsTable";
 import FolderIcon from "./_components/transactions/FolderIcon";
 import clsx from "clsx";
 import { Download } from "lucide-react";
+import ReportModal from "./_components/transactions/ReportModal";
 
 
 export default function Home() {
@@ -16,9 +17,9 @@ export default function Home() {
         <FolderIcon />
 
         <button
-          className="px-6 py-2 rounded-md text-sm font-medium text-white bg-gradient-to-b from-[#C7B29B] to-[#91775C] hover:opacity-90 transition flex items-center gap-3"
+          className="cursor-pointer px-6 py-2 rounded-md text-sm font-medium text-white bg-gradient-to-b from-[#C7B29B] to-[#91775C] hover:opacity-90 transition flex items-center gap-3 lufga_semibold"
         >
-        <img src="/images/download.png" alt="" />Download
+          <img src="/images/download.png" alt="" />Download
         </button>
 
       </div>
@@ -26,6 +27,8 @@ export default function Home() {
       <Filters />
 
       <TransactionsTable />
+
+
 
     </div>
   );
