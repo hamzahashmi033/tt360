@@ -35,7 +35,7 @@ export default function Filters() {
           </div>
         </div>
 
-        <div className="text-sm  min-w-[18 0px]">
+        <div className="text-sm  min-w-[180px]">
           <span className="text-[#222222] lufga_medium text-[14px]">Date Type:</span>
           <span className="text-[#222222] ml-2 sf_pro_regular text-[14px]">Created Date</span>
         </div>
