@@ -11,10 +11,10 @@ export default function ReportModal() {
   return (
     <>
       <div
-        className="inline-block p-[2px] rounded-md bg-gradient-to-b from-[#C7B29B] to-[#91775C]"
+        className="inline-block p-[3px] rounded-lg bg-gradient-to-b from-[#C7B29B] to-[#947A5F]"
         onClick={() => setOpen(true)}
       >
-        <button className="bg-[#EEECE8] px-8 py-1 rounded-md text-sm font-medium text-black cursor-pointer transition flex items-center gap-3 lufga_regular">
+        <button className="bg-[#EEECE8] px-8 py-2 rounded-md text-[15px]  text-black cursor-pointer transition flex items-center gap-3 lufga_semibold">
           <img src="/images/filter.png" alt="" />
           Filter
         </button>

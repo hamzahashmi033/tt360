@@ -8,36 +8,36 @@ export default function Filters() {
 
       <h3 className="font-semibold mb-4 lufga_medium text-[18px]">Filters</h3>
 
-      <div className="flex gap-6 items-center flex-wrap">
+      <div className="flex gap-6  flex-wrap">
 
-        <div className="text-[14px] border-r-1 min-w-[220px]">
+        <div className="text-[14px] border-r-1 border-[#D8D8D8] min-w-[200px]">
           <div>
 
-            <span className="text-gray-500 lufga_regular">From Date:</span>
-            <span className="ml-2 sf_pro_regular">06/12/2024</span>
+            <span className="text-gray-500 lufga_medium text-[14px]">From Date:</span>
+            <span className="ml-2 sf_pro_regular text-[14px]">06/12/2024</span>
           </div>
           <div>
-            <span className="text-gray-500 lufga_regular">To Date:</span>
-            <span className="ml-2 sf_pro_regular">06/12/2024</span>
+            <span className="text-gray-500 lufga_medium text-[14px]">To Date:</span>
+            <span className="ml-2 sf_pro_regular text-[14px]">06/12/2024</span>
           </div>
 
         </div>
 
-        <div className="text-sm border-r-1 min-w-[220px]">
+        <div className="text-sm border-r-1 border-[#D8D8D8] min-w-[200px]">
           <div>
 
-            <span className="text-gray-500 lufga_regular">Sender Location:</span>
-            <span className="ml-2 sf_pro_regular">All</span>
+            <span className="text-gray-500 lufga_medium text-[14px]">Sender Location:</span>
+            <span className="ml-2 sf_pro_regular text-[14px]">All</span>
           </div>
           <div>
-            <span className="text-gray-500 lufga_regular">State:</span>
-            <span className="ml-2 sf_pro_regular">All</span>
+            <span className="text-gray-500 lufga_medium text-[14px]">State:</span>
+            <span className="ml-2 sf_pro_regular text-[14px]">All</span>
           </div>
         </div>
 
         <div className="text-sm  min-w-[18 0px]">
-          <span className="text-gray-500">Date Type:</span>
-          <span className="ml-2">Created Date</span>
+          <span className="text-gray-500 lufga_medium text-[14px]">Date Type:</span>
+          <span className="ml-2 sf_pro_regular text-[14px]">Created Date</span>
         </div>
 
         <ReportModal />

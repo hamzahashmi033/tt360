@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import '../app/_styles/fonts.css';
 
+body {
+  overflow-x: auto;
+}
+
+
 .lufga_regular {
   font-family: 'lufga';
   font-weight: 400;

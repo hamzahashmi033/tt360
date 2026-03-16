@@ -22,11 +22,11 @@ export default function TransactionsTable() {
   return (
     <div className="rounded-lg mt-6 overflow-hidden ">
 
-      <div className="mb-4 flex justify-between ">
+      <div className="mb-4 flex justify-between items-center">
         <div className="min-w-[560px] flex relative">
           <input
             placeholder="Search"
-            className="bg-white sf_pro_regular text-[#AAAAAA] border border-[#CCCCCC]  rounded-md px-3 py-2 w-60 w-full"
+            className="bg-white text-black placeholder-[#AAAAAA] sf_pro_regular border border-[#CCCCCC] rounded-md px-3 py-2 w-full"
           />
           <div className="p-2 flex items-center justify-center bg-[#E1DED8] absolute right-2 top-[4px] rounded-full cursor-pointer">
             <img src="/images/search.png" alt="" />
@@ -36,8 +36,8 @@ export default function TransactionsTable() {
 
         <span className="text-[18px] lufga_medium">50 Records</span>
       </div>
-      <div className="w-full overflow-x-auto">
-        <table className="min-w-[1100px] w-full text-sm">
+      <div className="w-full">
+        <table className="w-full text-sm">
 
           <thead className="bg-[#E1DED8] text-left lufga_medium">
             <tr>
@@ -58,8 +58,7 @@ export default function TransactionsTable() {
             {Array(7).fill(data[0]).map((row, i) => (
               <tr
                 key={i}
-                className={`border-t  border-b border-[#ECEAE6] sf_pro_regular [&:nth-child(2)]:bg-[#E1DED8] ${i === 3 || i === 5 ? "bg-[#FDFCF5]" : "bg-white"
-                  }`}
+                className="border-t border-b border-[#ECEAE6] sf_pro_regular even:bg-[#FDFCF5] hover:bg-[#E1DED8]"
               >
                 <td className="p-3">{row.money}</td>
                 <td>{row.agent}</td>
