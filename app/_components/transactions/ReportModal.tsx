@@ -2,28 +2,31 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { X } from "lucide-react";
+import "react-datepicker/dist/react-datepicker.css";
+import Button from "../ui/Button";
+import SelectField from "../ui/SelectField";
+import DateRangeField from "../ui/DateRangeField";
+import SenderLocationField from "../ui/SenderLocationField";
 
 export default function ReportModal() {
-
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const [startDate, endDate] = dateRange;
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <div
-        className="inline-block p-[3px] rounded-lg bg-gradient-to-b from-[#C7B29B] to-[#947A5F]"
+      <Button
+        variant="gradientBorder"
+        icon="/images/filter.png"
         onClick={() => setOpen(true)}
       >
-        <button className="bg-[#EEECE8] px-8 py-2 rounded-md text-[15px]  text-black cursor-pointer transition flex items-center gap-3 lufga_semibold">
-          <img src="/images/filter.png" alt="" />
-          Filter
-        </button>
-      </div>
+        Filter
+      </Button>
 
       <Transition show={open} as={Fragment}>
         <Dialog onClose={() => setOpen(false)} className="relative z-50">
 
-          
+
           <Transition.Child
             as={Fragment}
             enter="transition-opacity duration-300"
@@ -36,10 +39,8 @@ export default function ReportModal() {
             <div className="fixed inset-0 bg-black/60" />
           </Transition.Child>
 
-         
           <div className="fixed inset-0 flex items-start justify-center pt-20 p-4">
 
-            
             <Transition.Child
               as={Fragment}
               enter="transition ease-out duration-300"
@@ -51,102 +52,73 @@ export default function ReportModal() {
             >
               <Dialog.Panel className="w-full max-w-5xl rounded-xl bg-[#F8F8F8]">
 
+
                 <div className="flex items-center gap-3 bg-[#E1DED8] p-4 mx-1 rounded-tl-xl rounded-tr-xl mt-1">
                   <img src="/images/document.png" />
-                  <h2 className="text-[24px] lufga_medium">Daily Reports</h2>
+                  <h2 className="text-[24px] lufga_medium text-[#222222]">Daily Reports</h2>
                 </div>
 
                 <div className="p-8">
 
-                  <div className="mb-6">
-                    <label className="block text-sm mb-2 lufga_medium">
-                      Report Name
-                    </label>
-                    <select className="w-96 p-3 rounded-md bg-white">
-                      <option>Shaka Compliance Report</option>
-                    </select>
-                  </div>
 
-                  <h3 className="mb-3 lufga_medium text-[18px]">DATE RANGE</h3>
+                  <SelectField label="Report Name" width="w-96">
+                    <option>Shaka Compliance Report</option>
+                  </SelectField>
+
+
+                  <h3 className="mb-3 lufga_medium text-[18px] text-[#222222] ">DATE RANGE</h3>
 
                   <div className="grid grid-cols-2 gap-6 mb-6">
 
-                    <div>
-                      <label className="block mb-2 lufga_medium">
-                        Date Type
-                      </label>
-                      <select className="w-full p-3 rounded-md text-[15px] bg-white">
-                        <option>Select</option>
-                      </select>
-                    </div>
 
-                    <div>
-                      <label className="block mb-2 text-[15px] lufga_medium">
-                        Date Range
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Select"
-                        className="w-full p-3 rounded-md bg-white"
-                      />
-                    </div>
+                    <SelectField label="Date Type">
+                      <option>Select</option>
+                    </SelectField>
 
+                    <DateRangeField
+                      startDate={startDate}
+                      endDate={endDate}
+                      setDateRange={setDateRange}
+                    />
                   </div>
 
-                  <hr className="my-6 border-gray-400" />
+                  <hr className="my-6 border-[#979797] border-[1px]" />
 
-                  <h3 className="font-semibold mb-4 text-[18px] lufga_medium">
+
+                  <h3 className="font-semibold mb-4 text-[18px] lufga_medium text-[#222222]">
                     LOCATION
                   </h3>
 
+
                   <div className="mb-6">
 
-                    <label className="block mb-2 lufga_medium text-[15px]">
-                      Sender Location
-                    </label>
-
-                    <div className="flex items-center gap-4">
-
-                      <select className="flex-1 p-3 rounded-md bg-white">
-                        <option>Select</option>
-                      </select>
-
-                      <label className="flex items-center gap-2 sf_pro_regular">
-                        <input type="checkbox" />
-                        include sub-locations
-                      </label>
-
-                    </div>
-
+                    <SenderLocationField
+                      label="Sender Location"
+                      checkboxLabel="include sub-locations"
+                    />
                   </div>
 
-                  <div className="mb-8">
 
-                    <label className="block mb-2 lufga_medium">State</label>
+                  <SelectField label="State" width="w-96">
+                    <option>Select</option>
+                  </SelectField>
 
-                    <select className="w-96 p-3 rounded-md bg-white">
-                      <option>Select</option>
-                    </select>
-
-                  </div>
 
                   <div className="flex items-center gap-4">
 
-                    <button
+                    <Button
+                      variant="outline"
                       onClick={() => setOpen(false)}
-                      className="px-6 py-3 rounded-md border border-gray-500 text-gray-600"
                     >
                       Cancel
-                    </button>
+                    </Button>
 
-                    <button className="flex-1 py-3 rounded-md bg-gradient-to-b from-[#C7B29B] to-[#91775C] text-white cursor-pointer flex items-center justify-center gap-2 lufga_semibold">
-                      <img
-                        src="/images/filter.png"
-                        alt=""
-                        className="invert brightness-0"
-                      />
+                    <Button
+                      variant="apply"
+                      icon="/images/filter.png"
+                    >
                       Apply Filters
-                    </button>
+                    </Button>
 
                   </div>
 
@@ -156,7 +128,6 @@ export default function ReportModal() {
             </Transition.Child>
 
           </div>
-
         </Dialog>
       </Transition>
     </>

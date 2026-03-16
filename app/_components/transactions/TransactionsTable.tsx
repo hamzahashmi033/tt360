@@ -1,4 +1,4 @@
-import { Search } from "lucide-react"
+
 import Pagination from "../ui/Pagination"
 
 
@@ -26,7 +26,7 @@ export default function TransactionsTable() {
         <div className="min-w-[560px] flex relative">
           <input
             placeholder="Search"
-            className="bg-white text-black placeholder-[#AAAAAA] sf_pro_regular border border-[#CCCCCC] rounded-md px-3 py-2 w-full"
+            className="bg-white text-[#222222] placeholder-[#AAAAAA] sf_pro_regular border border-[#CCCCCC] rounded-md px-3 py-2 w-full"
           />
           <div className="p-2 flex items-center justify-center bg-[#E1DED8] absolute right-2 top-[4px] rounded-full cursor-pointer">
             <img src="/images/search.png" alt="" />
@@ -34,12 +34,12 @@ export default function TransactionsTable() {
         </div>
 
 
-        <span className="text-[18px] lufga_medium">50 Records</span>
+        <span className="text-[#222222] text-[18px] lufga_medium">50 Records</span>
       </div>
       <div className="w-full">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm text-[#222222]">
 
-          <thead className="bg-[#E1DED8] text-left lufga_medium">
+          <thead className="text-[#222222] bg-[#E1DED8] text-left lufga_medium">
             <tr>
               <td className="p-3 rounded-tl-xl">MONEY TRANSMITTER CODE</td>
               <td>AGENT CODE</td>

@@ -30,7 +30,7 @@ export default function Pagination() {
         <button
           key={n}
           onClick={() => setPage(n)}
-          className={`w-[28px] h-[28px] lufga_medium flex items-center justify-center rounded-full ${n === page ? "bg-[#E1DED8]" : ""
+          className={`text-[#222222] w-[28px] h-[28px] lufga_medium flex items-center justify-center rounded-full ${n === page ? "bg-[#E1DED8]" : ""
             }`}
         >
           {n}

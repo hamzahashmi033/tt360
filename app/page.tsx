@@ -16,20 +16,15 @@ export default function Home() {
 
         <FolderIcon />
 
-        <button
-          className="cursor-pointer px-6 py-2 rounded-md text-sm font-medium text-white bg-gradient-to-b from-[#C7B29B] to-[#91775C] hover:opacity-90 transition flex items-center gap-3 lufga_semibold"
-        >
-          <img src="/images/download.png" alt="" />Download
-        </button>
+        <Button icon="/images/download.png">
+          Download
+        </Button>
 
       </div>
 
       <Filters />
 
       <TransactionsTable />
-
-
-
     </div>
   );
 }
